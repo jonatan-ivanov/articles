@@ -3,7 +3,7 @@
 Code coverage (or test coverage) shows which lines of the code were (or were not) being executed by the tests. It is also a metric which helps you to find out the percentage of your covered (executed) code by the tests. E.g.: It tells you that your codebase consists of 10 lines, 8 lines were being executed by your tests, so your coverage is 80%.  
 (It tells you nothing about the quality of your software or how good your tests are.)
 
-If you want to read more about code coverage, check these:
+If you want to read more about code coverage, check these links:
 
 - [Wiki - Code Coverage](https://en.wikipedia.org/wiki/Code_coverage)
 - [Martin Fowler - Test Coverage](http://martinfowler.com/bliki/TestCoverage.html)
