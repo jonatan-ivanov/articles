@@ -5,7 +5,7 @@
 As you probably know, Java uses UTF-16 to represent `String`s. The `char` data type and the `Character` class are based on the original Unicode specification, which defined characters as fixed-width 16-bit entities. The Unicode Standard has since been changed to allow for characters whose representation requires more than 16 bits.
 Therefore, in the UTF-16 representation, there are characters (Code Points) which are represented by one- and some other characters which are represented by two char values (Code Units).
 
-Please check out the [Java String length confusion](https://dzone.com/articles/java-string-length-confusion) article and the [JavaDoc of the Character class](https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Character.html) for more details and better explanation.
+Please check out the [Java String length confusion](Java_String_length/Java_String_length.md) article and the [JavaDoc of the Character class](https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Character.html) for more details and a better explanation.
 
 ## Example
 
@@ -18,7 +18,7 @@ Character: `𝔸` ([Mathematical double-struck capital A](https://codepoints.net
 The first one is straightforward, the second one is a little bit more interesting; this single character (Code Point) is represented by two [Unicode escapes](https://docs.oracle.com/javase/specs/jls/se11/html/jls-3.html#jls-3.3). This means a couple of things:
 
 - This single character is represented by **two** `char` (or `Character`) values (Code Units)
-- The `length()` of this `String` is **two** (see: [Java String length confusion](https://dzone.com/articles/java-string-length-confusion))
+- The `length()` of this `String` is **two** (see: [Java String length confusion](Java_String_length/Java_String_length.md))
 - The `toCharArray()` method returns a char array (`char[]`) which has two elements (`0xD835` and `0xDD38` respectively)
 - Both `charAt(0)` and `charAt(1)` return something (no `StringIndexOutOfBoundsException`) but these values are not valid characters
 - If you do any character manipulation, you need to consider this case and handle these characters which consist of two `char`s (surrogates)
@@ -49,7 +49,7 @@ System.out.println(str); // prints 𝔸BC
 System.out.println(reverse(str)); // prints CB??
 ```
 
-If you run the reverse method above, it will produce a `String` like this: `"CB\uDD38\uD835"`. `C` and `B` are ok, but `\uDD38\uD835` is invalid, that's why you see `??` when you print it. The method should not have reversed them, the valid result would be `"CB\uD835\uDD38"` (`CB𝔸`).
+If you run the reverse method above, it will produce a `String` like this: `"CB\uDD38\uD835"`. `C` and `B` are ok but `\uDD38\uD835` is invalid, that's why you see `??` when you print it. The method should not have reversed them, the valid result would be `"CB\uD835\uDD38"` (`CB𝔸`).
 
 ## Solution
 
