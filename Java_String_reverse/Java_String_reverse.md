@@ -3,7 +3,7 @@
 ## Facts and Terminology
 
 As you probably know, Java uses UTF-16 to represent `String`s. The `char` data type and the `Character` class are based on the original Unicode specification, which defined characters as fixed-width 16-bit entities. The Unicode Standard has since been changed to allow for characters whose representation requires more than 16 bits.
-Therefore, in the UTF-16 representation, there are characters (Code Points) which are represented by one- and some other characters which are represented by by two char values (Code Units).
+Therefore, in the UTF-16 representation, there are characters (Code Points) which are represented by one- and some other characters which are represented by two char values (Code Units).
 
 Please check out the [Java String length confusion](https://dzone.com/articles/java-string-length-confusion) article and the [JavaDoc of the Character class](https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Character.html) for more details and better explanation.
 
