@@ -44,7 +44,7 @@ static String reverse(String original) {
 Let's see it in action:
 
 ```
-String str = "\uD835\uDD38BC"; // Three characters: 𝔸, B, C (5 chars)
+String str = "\uD835\uDD38BC"; // Three characters: 𝔸, B, C (4 chars)
 System.out.println(str); // prints 𝔸BC
 System.out.println(reverse(str)); // prints CB??
 ```
